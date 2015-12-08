@@ -1,0 +1,25 @@
+{
+  "name": "angular-revolution",
+  "version": "1.0.0",
+  "description": "Directive for Slider Revolution plugin from ThemePunch",
+  "main": "dist/angular-revolution.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Karnith/angular-revolution.git"
+  },
+  "keywords": [
+    "angular",
+    "slider",
+    "revolution",
+    "jquery"
+  ],
+  "author": "JCMar",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Karnith/angular-revolution/issues"
+  },
+  "homepage": "https://github.com/Karnith/angular-revolution"
+}
