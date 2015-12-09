@@ -137,6 +137,8 @@ or an attribute
 </div>
 ```
 
+The $scope is used to push slider configurations to the element & attributes which in turn feed into the slider jQuery plugin.
+
 ## Example
 
 index.html
@@ -374,39 +376,104 @@ index.js
 
 ## Attributes
 
-sliderType: The type of slider to use (Standard, Hero, Carousel)
-sliderLayout: Responsiveness of slider (Auto, fullwidth, fullscreen)
-responsiveLevels: Grid Sizes (Aspect Ratios)
-gridwidth: The content container size within a slider for width
-gridheight: the content container size within a slider for height
-autoHeight: allow the Slider to always keep the Aspect Ratio which is set via the gridwidth and gridheight parameters (on, off)
-minHeight: Slider Minimum Height
-fullScreenOffsetContainer:  Slider’s height will be reduced with the height of the containers
-fullScreenOffset: Fullscreen Slider’s height will be reduced/increased with the the value defined 
-delay: Describes the default (global) length of the slides in ms
-disableProgressBar: Display progressbar (on, off)
-startDelay: Wait with starting the first animation after the slider has been loaded. 
-stopAfterLoops: Auto Play stop after the Slider has been looped  “x” time
-stopAtSlide: Auto Play stop at Slide Nr. “x”
-viewPort: Define how many percent of the Slider must be visible before it starts
-lazyType: The art to load the images within the slides and navigation containers
-dottedOverlay: A Default overlay on slides
-shadow: Shadow type which will be drawn via jQuery and css on demand
-spinner: Loader (“spinner”) Type
-hideAllCaptionAtLilmit: Defines a Global parameter to hide all layers if the browser width is smaller than this
-hideCaptionAtLimit: Defines a Global parameter to hide certain layers if the browser width is smaller than this
-hideSliderAtLimit: Defines a Global parameter to hide certain layers if the browser width is smaller than this
-debugMode: Turns on the Frontend Debug mode,
-extensions: Extensions location
-extensions_suffix: Extensions suffix
-fallbacks: Fallbacks for slider on different devices / browsers
-parallax: Defines the configuration for parallax
-revCarousel: Defines the settings for carousel
-navigation: Defines the settings for navigation
-jsFileLocation: '@',
-visibilityLevels: '@',
-hideThumbsOnMobile: Hide thumbnails on mobile devices
-slides: Slides object
+sliderType:
+The type of slider to use (Standard, Hero, Carousel)
+
+sliderLayout:
+Responsiveness of slider (Auto, fullwidth, fullscreen)
+
+responsiveLevels:
+Grid Sizes (Aspect Ratios)
+
+gridwidth:
+The content container size within a slider for width
+
+gridheight:
+The content container size within a slider for height
+
+autoHeight:
+allow the Slider to always keep the Aspect Ratio which is set via the gridwidth and gridheight parameters (on, off)
+
+minHeight:
+Slider Minimum Height
+
+fullScreenOffsetContainer:
+Slider’s height will be reduced with the height of the containers
+
+fullScreenOffset:
+Fullscreen Slider’s height will be reduced/increased with the the value defined 
+
+delay:
+Describes the default (global) length of the slides in ms
+
+disableProgressBar:
+Display progressbar (on, off)
+
+startDelay:
+Wait with starting the first animation after the slider has been loaded. 
+
+stopAfterLoops:
+Auto Play stop after the Slider has been looped  “x” time
+
+stopAtSlide:
+Auto Play stop at Slide Nr. “x”
+
+viewPort:
+Define how many percent of the Slider must be visible before it starts
+
+lazyType:
+The art to load the images within the slides and navigation containers
+
+dottedOverlay:
+A Default overlay on slides
+
+shadow:
+Shadow type which will be drawn via jQuery and css on demand
+
+spinner:
+Loader (“spinner”) Type
+
+hideAllCaptionAtLilmit:
+Defines a Global parameter to hide all layers if the browser width is smaller than this
+
+hideCaptionAtLimit:
+Defines a Global parameter to hide certain layers if the browser width is smaller than this
+
+hideSliderAtLimit:
+Defines a Global parameter to hide certain layers if the browser width is smaller than this
+
+debugMode:
+Turns on the Frontend Debug mode,
+
+extensions:
+Extensions location
+
+extensions_suffix:
+Extensions suffix
+
+fallbacks:
+Fallbacks for slider on different devices / browsers
+
+parallax:
+Defines the configuration for parallax
+
+revCarousel:
+Defines the settings for carousel
+
+navigation:
+Defines the settings for navigation
+
+jsFileLocation:
+Location to js file
+
+visibilityLevels:
+Visibility Levels
+
+hideThumbsOnMobile:
+Hide thumbnails on mobile devices
+
+slides:
+Slides object
 
 ## Resources
 
