@@ -137,15 +137,19 @@ or an attribute
 </div>
 ```
 
-The $scope is used to push slider configurations to the element & attributes which in turn feed into the slider jQuery plugin.
+The $scope is used to push slider configurations to the element & attributes which in turn feed into the slider jQuery plugin. Eventually I will add the ability to pass a slides object to the api which will allow slides to come from a database.
 
 ## Example
 
 index.html
 ```html
+<!-- main container -->
 <div class="container-fluid" data-ng-style="{'max-width':'1920px'}">
+    <!-- slider parent container -->
     <section class="content-section" data-ng-style="{'max-width':'1920px', 'margin':'0 auto'}">
+      <!-- slider container -->
       <div class="rev_slider_wrapper jumbotron" style="background-color:#ddd;margin:0px auto;padding:0px;margin-top:0px;margin-bottom:0px;">
+        <!-- angular-revolution as attribute in div -->
         <div rev-slider
           id="rev_slider"
           class="rev_slider"
@@ -193,185 +197,90 @@ index.html
 
 index.js
 ```html
-(function() {
-  var Config, HomeCtrl;
-
-  Config = (function() {
-    function Config($stateProvider, $urlRouterProvider, gsapifyRouterProvider) {
-      $stateProvider.state("frontPage.home", {
-        url: "/",
-        views: {
-          content: {
-            controller: "HomeCtrl",
-            controllerAs: "homeVm",
-            templateProvider: function($templateCache) {
-              return $templateCache.get("app/public/home/index.tpl.html");
-            }
-          }
-        },
-        ncyBreadcrumb: {
-          label: "Home"
-        },
-        data: {
-          "gsapifyRouter.content": {
-            enter: {
-              "in": {
-                transition: "slideLeft"
-              },
-              out: {
-                transition: "slideRight"
-              }
-            }
-          }
-        }
-      });
-    }
-
-    return Config;
-
-  })();
-
-  HomeCtrl = (function() {
-    function HomeCtrl($scope, titleService, $log, $mdDialog, $document) {
-      var action, vm;
-      vm = this;
-      titleService.setTitle("Home");
-      $scope.$on("gsapifyRouter:enterSuccess", function() {
-        return $log.log("gsapifyRouter:enterSuccess", "home");
-      });
-      action = function(event) {
-        return $mdDialog.show($mdDialog.alert().title("Secondary Action").content("Secondary actions can be used for one click actions").ariaLabel("Secondary click demo").ok("Neat!").targetEvent(event));
-      };
-      vm.serviceCards = [
-        {
-          link: "frontPage.services.spc",
-          imagePath: "core/templates/default/images/hand.jpg",
-          imageAlt: "Consulting Hand",
-          title: "SharePoint Consulting",
-          mainContent: "JCMar specializes in customizations, integrations and implementations. New to SharePoint? Extending your existing environment? No matter where you are on the journey, we\"ll find the right solution for you.",
-          action: action,
-          enabled: true
-        }, {
-          link: "frontPage.services.csc",
-          imagePath: "core/templates/default/images/prog1.jpg",
-          imageAlt: "Programming",
-          title: "Websites & Solutions",
-          mainContent: "Using our expertise in technology, both latest and legacy, we can provide a solution to your business situations that meets both your goals and budget.",
-          action: action,
-          enabled: true
-        }, {
-          link: "frontPage.services.iic",
-          imagePath: "core/templates/default/images/gears.jpg",
-          imageAlt: "Gears",
-          title: "Infrastructure IT Consulting",
-          mainContent: "JCMar specializes in SharePoint Customizations, integrations and implementations.",
-          action: action,
-          enabled: false
-        }, {
-          link: "frontPage.services.mad",
-          imagePath: "core/templates/default/images/touch.jpg",
-          imageAlt: "Mobile",
-          title: "Mobile Application Development",
-          mainContent: "JCMar specializes in SharePoint customizations, integrations and implementations.",
-          action: action,
-          enabled: false
-        }, {
-          link: "frontPage.services.cloud",
-          imagePath: "core/templates/default/images/cloud.png",
-          imageAlt: "Cloud",
-          title: "Cloud",
-          mainContent: "JCMar specializes in SharePoint Customizations, integrations and implementations.",
-          action: action,
-          enabled: true
-        }
-      ];
-      $scope.slider = {
-        sliderType: "standard",
-        sliderLayout: "auto",
-        responsiveLevels: [1920, 1024, 778, 480],
-        gridwidth: [1930, 1240, 778, 480],
-        gridheight: [768, 768, 960, 720],
-        autoHeight: "off",
-        minHeight: "",
-        fullScreenOffsetContainer: "",
-        fullScreenOffset: "",
-        delay: 9000,
-        disableProgressBar: "on",
-        startDelay: "",
-        stopAfterLoops: "",
-        stopAtSlide: "",
-        viewPort: {},
-        lazyType: "none",
-        dottedOverlay: "none",
-        shadow: 0,
-        spinner: "off",
-        hideAllCaptionAtLilmit: 0,
-        hideCaptionAtLimit: 0,
-        hideSliderAtLimit: 0,
-        debugMode: false,
-        extensions: "",
-        extensions_suffix: "",
-        fallbacks: {
-          simplifyAll: "off",
-          disableFocusListener: false
-        },
-        parallax: {
-          type: "scroll",
-          origo: "enterpoint",
-          speed: 400,
-          levels: [5, 10, 15, 20, 25, 30, 35, 40, 45, 50]
-        },
-        carousel: {},
-        navigation: {
-          keyboardNavigation: "off",
-          keyboard_direction: "horizontal",
-          mouseScrollNavigation: "off",
-          onHoverStop: "on",
-          touch: {
-            touchenabled: "on",
-            swipe_treshold: 75,
-            swipe_min_touches: 1,
-            drag_block_vertical: false,
-            swipe_direction: "horizontal"
-          },
-          tabs: {
-            style: "zeus",
-            enable: true,
-            width: 150,
-            height: 30,
-            min_width: 100,
-            wrapper_padding: 0,
-            wrapper_color: "transparent",
-            wrapper_opacity: "0",
-            tmp: "<span class="tp-tab-title">{{title}}</span>",
-            visibleAmount: 3,
-            hide_onmobile: true,
-            hide_under: 480,
-            hide_onleave: false,
-            hide_delay: 200,
-            direction: "horizontal",
-            span: true,
-            position: "inner",
-            space: 1,
-            h_align: "left",
-            v_align: "top",
-            h_offset: 30,
-            v_offset: 30
-          }
-        },
-        jsFileLocation: "",
-        visibilityLevels: [1240, 1024, 778, 480],
-        hideThumbsOnMobile: "off"
-      };
-    }
-
-    return HomeCtrl;
-
-  })();
-
-  angular.module("JCMarSite").config(["$stateProvider", "$urlRouterProvider", "gsapifyRouterProvider", Config]).controller("HomeCtrl", ["$scope", "titleService", "$log", "$mdDialog", "$document", HomeCtrl]);
-
-}).call(this);
+// angular module
+angular.module("app", [])
+// module controller
+.controller("HomeCtrl", ["$scope", function ($scope) {
+  // slider settings object set to scope.
+  $scope.slider = {
+	sliderType: "standard",
+	sliderLayout: "auto",
+	responsiveLevels: [1920, 1024, 778, 480],
+	gridwidth: [1930, 1240, 778, 480],
+	gridheight: [768, 768, 960, 720],
+	autoHeight: "off",
+	minHeight: "",
+	fullScreenOffsetContainer: "",
+	fullScreenOffset: "",
+	delay: 9000,
+	disableProgressBar: "on",
+	startDelay: "",
+	stopAfterLoops: "",
+	stopAtSlide: "",
+	viewPort: {},
+	lazyType: "none",
+	dottedOverlay: "none",
+	shadow: 0,
+	spinner: "off",
+	hideAllCaptionAtLilmit: 0,
+	hideCaptionAtLimit: 0,
+	hideSliderAtLimit: 0,
+	debugMode: false,
+	extensions: "",
+	extensions_suffix: "",
+	fallbacks: {
+	  simplifyAll: "off",
+	  disableFocusListener: false
+	},
+	parallax: {
+	  type: "scroll",
+	  origo: "enterpoint",
+	  speed: 400,
+	  levels: [5, 10, 15, 20, 25, 30, 35, 40, 45, 50]
+	},
+	carousel: {},
+	navigation: {
+	  keyboardNavigation: "off",
+	  keyboard_direction: "horizontal",
+	  mouseScrollNavigation: "off",
+	  onHoverStop: "on",
+	  touch: {
+		touchenabled: "on",
+		swipe_treshold: 75,
+		swipe_min_touches: 1,
+		drag_block_vertical: false,
+		swipe_direction: "horizontal"
+	  },
+	  tabs: {
+		style: "zeus",
+		enable: true,
+		width: 150,
+		height: 30,
+		min_width: 100,
+		wrapper_padding: 0,
+		wrapper_color: "transparent",
+		wrapper_opacity: "0",
+		tmp: "<span class="tp-tab-title">{{title}}</span>",
+		visibleAmount: 3,
+		hide_onmobile: true,
+		hide_under: 480,
+		hide_onleave: false,
+		hide_delay: 200,
+		direction: "horizontal",
+		span: true,
+		position: "inner",
+		space: 1,
+		h_align: "left",
+		v_align: "top",
+		h_offset: 30,
+		v_offset: 30
+	  }
+	},
+	jsFileLocation: "",
+	visibilityLevels: [1240, 1024, 778, 480],
+	hideThumbsOnMobile: "off"
+  };
+}]);
 ```
 
 ## Attributes
@@ -473,7 +382,7 @@ hideThumbsOnMobile:
 Hide thumbnails on mobile devices
 
 slides:
-Slides object
+Slides object, still under development
 
 ## Resources
 
