@@ -18,7 +18,7 @@
 
 **(1)** Get angular-revolution in one of the following ways:
  - clone & [build](CONTRIBUTING.md#developing) this repository
- - [download the release](https://github.com/Karnith/angular-revolution/archive/master.zip)
+ - [download the release](https://github.com/Karnith/angular-revolution/archive/master.zip)xed
  - via **[npm](https://www.npmjs.org/)**: by running `$ npm install angular-revolution` from your console
  - or via **[Bower](http://bower.io/)**: by running `$ bower install angular-revolution` from your console
  
