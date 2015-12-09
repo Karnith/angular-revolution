@@ -5,7 +5,7 @@
 ### **Note:** *This directive requires the jQuery plugin Slider Revolution, which is a paid plugin and requires license. The plugin is not included in this directive because of this.
 
 ---
-**[Download 1.0.0](https://github.com/Karnith/angular-revolution/archive/master.zip)** (or **[Minified](http://angular-ui.github.io/ui-router/release/angular-ui-router.min.js)**) **|**
+**[Download 1.0.0](https://github.com/Karnith/angular-revolution/archive/master.zip) **|**
 **[Guide](https://github.com/Karnith/angular-revolution/wiki) |**
 **[FAQ](https://github.com/Karnith/angular-revolution/wiki/Frequently-Asked-Questions) |**
 **[Resources](#resources) |**
