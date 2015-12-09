@@ -2,7 +2,7 @@
   "name": "angular-revolution",
   "description": "Directive for Slider Revolution plugin from ThemePunch",
   "version": "1.0.0",
-  "main": "dist/angular-revolution.js",
+  "main": "release/angular-revolution.js",
   "authors": [
     "JCMar"
   ],
