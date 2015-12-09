@@ -48,6 +48,16 @@ When you're done, your setup should look similar to the following:
 </html>
 ```
 
+## Features
+- Easy to use directive
+- Ability to have multiple slider instances on a page, each with their own configuration
+- Template configurable and easily overridden
+- Uses angular framework to present sliders which enables the plugin to be run when it's needed and destroyed when it isn't to save memory
+
+## To Do
+- Create ability to pass slides object to the api so slides can be stored in a database.
+- Fully template the slides template using angular methodologies so the slides are dynamic and separate from the default template
+
 ## Usage
 
 The directive can be used as an element
@@ -281,6 +291,418 @@ angular.module("app", [])
 	hideThumbsOnMobile: "off"
   };
 }]);
+```
+
+Default template
+```html
+<ul data-ng-style="{'max-width':'1920px'}">
+  <!-- SLIDE  -->
+  <li
+  data-index="rs-1255"
+  data-transition="slideoverhorizontal"
+  data-slotamount="7"
+  data-easein="default"
+  data-easeout="default"
+  data-masterspeed="1500"
+  data-thumb="core/templates/default/images/sliders/newspaper_bg1-320x200.jpg"
+  data-rotate="0"
+  data-fstransition="fade"
+  data-fsmasterspeed="1000"
+  data-fsslotamount="7"
+  data-saveperformance="off"
+  data-title="SharePoint"
+  data-description="">
+
+  <!-- MAIN IMAGE -->
+  <img
+  src="core/templates/default/images/sliders/newspaper_bg1.jpg"
+  alt=""
+  width="1920"
+  height="1280"
+  data-bgposition="center bottom"
+  data-bgfit="cover"
+  data-bgrepeat="no-repeat"
+  data-bgparallax="10"
+  class="rev-slidebg"
+  data-no-retina>
+
+  <!-- LAYER NR. 1 -->
+  <a class="tp-caption News-Title tp-resizeme rs-parallaxlevel-0"
+  data-ui-sref="frontPage.services.spc"
+  id="slide-1255-layer-1"
+  data-x="['left','left','left','left']"
+  data-hoffset="['80','80','40','40']"
+  data-y="['top','top','top','top']"
+  data-voffset="['450','450','250','150']"
+  data-width="364"
+  data-height="133"
+  data-whitespace="normal"
+  data-transform_idle="o:1;"
+  data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;s:1500;e:Power3.easeInOut;"
+  data-transform_out="y:[100%];s:1000;s:1000;"
+  data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"
+  data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;"
+  data-start="500"
+  data-splitin="none"
+  data-splitout="none"
+  data-responsive_offset="on"
+  data-ng-style="{
+  'z-index':'5',
+  'min-width':'364px',
+  'min-height':'133px',
+  'white-space':'normal',
+  'max-width':'364px',
+  'max-height':'133px',
+  'font-size':'70px',
+  'line-height':'60px',
+  'font-weight':'400',
+  'color':'rgba(255, 255, 255, 1.00)',
+  'font-family':'Roboto Slab',
+  'padding':'0 0 0 0',
+  'border-radius':'0 0 0 0'
+  }">
+  SharePoint
+  Consulting
+  </a>
+
+  <!-- LAYER NR. 2 -->
+  <div class="tp-caption tp-resizeme rs-parallaxlevel-0"
+  id="slide-1255-layer-2"
+  data-x="['left','left','left','left']"
+  data-hoffset="['80','80','40','40']"
+  data-y="['top','top','top','top']"
+  data-voffset="['587','587','382','282']"
+  data-width="none"
+  data-height="none"
+  data-whitespace="nowrap"
+  data-transform_idle="o:1;"
+  data-transform_in="x:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;s:1500;e:Power3.easeInOut;"
+  data-transform_out="x:[100%];s:1000;e:Power3.easeInOut;s:1000;e:Power3.easeInOut;"
+  data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"
+  data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;"
+  data-start="500"
+  data-responsive_offset="on"
+  data-ng-style="{'z-index':'6', 'line-height':'4px', 'padding':'0 0 0 0', 'border-radius':'0 0 0 0'}">
+  <img
+  src="core/templates/default/images/sliders/bluebar.png"
+  alt=""
+  width="350"
+  height="4"
+  data-ww="['350px','350px','350px','350px']"
+  data-hh="['4px','4px','4px','4px']"
+  data-no-retina>
+  </div>
+
+  <!-- LAYER NR. 3 -->
+  <a class="tp-caption News-Subtitle tp-resizeme rs-parallaxlevel-0"
+    data-ui-sref="frontPage.services.spc"
+    id="slide-1255-layer-3"
+    data-x="['left','left','left','left']"
+    data-hoffset="['81','81','41','41']"
+    data-y="['top','top','top','top']"
+    data-voffset="['605','605','401','301']"
+    data-width="none"
+    data-height="none"
+    data-whitespace="nowrap"
+    data-transform_idle="o:1;"
+    data-transform_hover="o:1;rX:0;rY:0;rZ:0;z:0;s:300;e:Power3.easeInOut;"
+    data-style_hover="c:rgba(255, 255, 255, 0.65);br:0 0 0px 0;cursor:pointer;"
+    data-transform_in="y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;s:1500;e:Power3.easeInOut;"
+    data-transform_out="y:[100%];s:1000;s:1000;"
+    data-mask_in="x:0px;y:0px;"
+    data-mask_out="x:inherit;y:inherit;"
+    data-start="500"
+    data-splitin="none"
+    data-splitout="none"
+    data-responsive_offset="on"
+    data-ng-style="{
+    'z-index':'7',
+    'min-width':'auto',
+    'min-height':'auto',
+    'white-space':'nowrap',
+    'max-width':'auto',
+    'max-height':'auto',
+    'font-size':'15px',
+    'line-height':'24px',
+    'font-weight':'300',
+    'color':'rgba(255, 255, 255, 1.00)',
+    'font-family':'Roboto Slab',
+    'background-color':'rgba(255, 255, 255, 0)',
+    'padding':'0 0 0 0',
+    'border-radius':'0 0 0 0'
+  }">
+  Balance SharePoint & Your Business to reach new heights
+  </a>
+
+  <!-- LAYER NR. 4 -->
+  <div class="tp-caption - tp-resizeme rs-parallaxlevel-0"
+  id="slide-1255-layer-4"
+  data-x="['left','left','left','left']"
+  data-hoffset="['463','463','443','443']"
+  data-y="['top','top','top','top']"
+  data-voffset="['607','607','403','303']"
+  data-width="none"
+  data-height="none"
+  data-whitespace="nowrap"
+  data-transform_idle="o:1;"
+  data-transform_in="x:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;s:1500;e:Power3.easeInOut;"
+  data-transform_out="x:[100%];s:1000;e:Power3.easeInOut;s:1000;e:Power3.easeInOut;"
+  data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"
+  data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;"
+  data-start="500"
+  data-splitin="none"
+  data-splitout="none"
+  data-responsive_offset="on"
+  data-ng-style="{
+  'z-index':'8',
+  'min-width':'auto',
+  'min-height':'auto',
+  'white-space':'nowrap',
+  'max-width':'auto',
+  'max-height':'auto',
+  'font-size':'20px',
+  'line-height':'22px',
+  'font-weight':'400',
+  'color':'rgba(0, 210, 255, 1.00)',
+  'padding':'0 0 0 0',
+  'border-radius':'0 0 0 0'
+  }">
+  <i class="fa fa-caret-right"></i>
+  </div>
+  </li>
+
+  <!-- SLIDE  -->
+  <li
+  data-index="rs-1103"
+  data-transition="slideoverhorizontal"
+  data-slotamount="7"
+  data-easein="default"
+  data-easeout="default"
+  data-masterspeed="1500"
+  data-thumb="core/templates/default/images/sliders/newspaper_bg3-320x200.jpg"
+  data-rotate="0"
+  data-saveperformance="off"
+  data-title="Web Solutions"
+  data-description="">
+
+  <!-- MAIN IMAGE -->
+  <img
+  src="core/templates/default/images/sliders/newspaper_bg2.jpg"
+  alt=""
+  width="1920"
+  height="1180"
+  data-bgposition="center bottom"
+  data-bgfit="cover"
+  data-bgrepeat="no-repeat"
+  data-bgparallax="10"
+  class="rev-slidebg"
+  data-no-retina>
+
+  <!-- LAYER NR. 1 -->
+  <a class="tp-caption News-Title tp-resizeme rs-parallaxlevel-0"
+  data-ui-sref="frontPage.services.csc"
+  id="slide-1103-layer-1"
+  data-x="['left','left','left','left']"
+  data-hoffset="['80','80','40','40']"
+  data-y="['top','top','top','top']"
+  data-voffset="['450','450','250','150']"
+  data-width="364"
+  data-height="133"
+  data-whitespace="normal"
+  data-transform_idle="o:1;"
+  data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;s:1500;e:Power3.easeInOut;"
+  data-transform_out="y:[100%];s:1000;s:1000;"
+  data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"
+  data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;"
+  data-start="500"
+  data-splitin="none"
+  data-splitout="none"
+  data-responsive_offset="on"
+  data-ng-style="{
+  'z-index':'5',
+  'min-width':'364px',
+  'min-height':'133px',
+  'white-space':'normal',
+  'max-width':'364px',
+  'max-height':'133px',
+  'font-size':'70px',
+  'line-height':'60px',
+  'font-weight':'400',
+  'color':'rgba(255, 255, 255, 1.00)',
+  'font-family':'Roboto Slab',
+  'padding':'0 0 0 0',
+  'border-radius':'0 0 0 0'
+  }">
+  Websites &
+  Solutions
+  </a>
+
+  <!-- LAYER NR. 2 -->
+  <div class="tp-caption  tp-resizeme rs-parallaxlevel-0"
+  id="slide-1103-layer-2"
+  data-x="['left','left','left','left']" data-hoffset="['80','80','40','40']"
+  data-y="['top','top','top','top']" data-voffset="['587','587','382','282']"
+  data-width="none"
+  data-height="none"
+  data-whitespace="nowrap"
+  data-transform_idle="o:1;"
+  data-transform_in="x:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;s:1500;e:Power3.easeInOut;"
+  data-transform_out="x:[100%];s:1000;e:Power3.easeInOut;s:1000;e:Power3.easeInOut;"
+  data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"
+  data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;"
+  data-start="500"
+  data-responsive_offset="on"
+  data-ng-style="{'z-index':'6', 'line-height':'4px', 'padding':'0 0 0 0', 'border-radius':'0 0 0 0'}">
+  <img src="core/templates/default/images/sliders/bluebar.png" alt="" width="350" height="4" data-ww="" data-hh="" data-no-retina>
+  </div>
+
+  <!-- LAYER NR. 3 -->
+  <a class="tp-caption News-Subtitle tp-resizeme rs-parallaxlevel-0"
+  data-ui-sref="frontPage.services.csc"
+  id="slide-1103-layer-3"
+  data-x="['left','left','left','left']"
+  data-hoffset="['81','81','41','41']"
+  data-y="['top','top','top','top']"
+  data-voffset="['605','605','401','301']"
+  data-width="none"
+  data-height="none"
+  data-whitespace="nowrap"
+  data-transform_idle="o:1;"
+  data-transform_hover="o:1;rX:0;rY:0;rZ:0;z:0;s:300;e:Power3.easeInOut;"
+  data-style_hover="c:rgba(255, 255, 255, 0.65);br:0 0 0px 0;cursor:pointer;"
+  data-transform_in="y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;s:1500;e:Power3.easeInOut;"
+  data-transform_out="y:[100%];s:1000;s:1000;"
+  data-mask_in="x:0px;y:0px;"
+  data-mask_out="x:inherit;y:inherit;"
+  data-start="500"
+  data-splitin="none"
+  data-splitout="none"
+  data-responsive_offset="on"
+  data-ng-style="{
+  'z-index':'7',
+  'min-width':'auto',
+  'min-height':'auto',
+  'white-space':'nowrap',
+  'max-width':'auto',
+  'max-height':'auto',
+  'font-size':'15px',
+  'line-height':'24px',
+  'font-weight':'300',
+  'color':'rgba(255, 255, 255, 1.00)',
+  'font-family':'Roboto Slab',
+  'background-color':'rgba(255, 255, 255, 0)',
+  'padding':'0 0 0 0',
+  'border-radius':'0 0 0 0'
+  }">
+  Provide unforgettable experiences to your users
+  </a>
+
+  <!-- LAYER NR. 4 -->
+  <div class="tp-caption - tp-resizeme rs-parallaxlevel-0"
+  id="slide-1103-layer-4"
+  data-x="['left','left','left','left']" data-hoffset="['423','423','383','383']"
+  data-y="['top','top','top','top']" data-voffset="['607','607','403','303']"
+  data-width="none"
+  data-height="none"
+  data-whitespace="nowrap"
+  data-transform_idle="o:1;"
+  data-transform_in="x:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;s:1500;e:Power3.easeInOut;"
+  data-transform_out="x:[100%];s:1000;e:Power3.easeInOut;s:1000;e:Power3.easeInOut;"
+  data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"
+  data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;"
+  data-start="500"
+  data-splitin="none"
+  data-splitout="none"
+  data-responsive_offset="on"
+  data-ng-style="{
+  'z-index':'8',
+  'min-width':'auto',
+  'min-height':'auto',
+  'white-space':'nowrap',
+  'max-width':'auto',
+  'max-height':'auto',
+  'font-size':'20px',
+  'line-height':'22px',
+  'font-weight':'400',
+  'color':'rgba(0, 210, 255, 1.00)',
+  'padding':'0 0 0 0',
+  'border-radius':'0 0 0 0'
+  }">
+  <i class="fa fa-caret-right"></i>
+  </div>
+  </li>
+</ul>
+<!--<ul data-ng-style="{'max-width':'1920px'}">-->
+  <!--&lt;!&ndash; SLIDE  &ndash;&gt;-->
+  <!--<li-->
+    <!--data-ng-repeat="slide in slides"-->
+    <!--data-index="{{slide.dataIndex}}"-->
+    <!--data-transition="{{slide.dataTransition}}"-->
+    <!--data-slotamount="{{slide.dataSlotamount}}"-->
+    <!--data-easein="{{slide.dataEasein}}"-->
+    <!--data-easeout="{{slide.dataEaseout}}"-->
+    <!--data-masterspeed="{{slide.dataMasterspeed}}"-->
+    <!--data-thumb="{{slide.dataThumb}}"-->
+    <!--data-rotate="{{slide.dataRotate}}"-->
+    <!--data-fstransition="{{slide.dataFstransition}}"-->
+    <!--data-fsmasterspeed="{{slide.dataFsmasterspeed}}"-->
+    <!--data-fsslotamount="{{slide.dataFsslotamount}}"-->
+    <!--data-saveperformance="{{slide.dataSaveperformance}}"-->
+    <!--data-title="{{slide.dataTitle}}"-->
+    <!--data-description="{{slide.dataDescription}}">-->
+
+    <!--&lt;!&ndash; MAIN IMAGE &ndash;&gt;-->
+    <!--<img-->
+      <!--data-ng-if="slide.mainImage.dataNoRetina"-->
+      <!--src="{{slide.mainImage.src}}"-->
+      <!--alt="{{slide.mainImage.alt}}"-->
+      <!--width="{{slide.mainImage.width}}"-->
+      <!--height="{{slide.mainImage.height}}"-->
+      <!--data-bgposition="{{slide.mainImage.dataBgposition}}"-->
+      <!--data-bgfit="{{slide.mainImage.dataBgfit}}"-->
+      <!--data-bgrepeat="{{slide.mainImage.dataBgrepeat}}"-->
+      <!--data-bgparallax="{{slide.mainImage.dataBgparallax}}"-->
+      <!--class="{{slide.mainImage.class}}"-->
+      <!--data-no-retina>-->
+
+    <!--&lt;!&ndash; LAYER NR. 1 &ndash;&gt;-->
+    <!--<div-->
+      <!--data-ng-repeat="layer in slide.layers"-->
+      <!--class="{{layer.class}}"-->
+      <!--id="{{layer.id}}"-->
+      <!--data-x="{{layer.dataX}}"-->
+      <!--data-hoffset="{{layer.dataHoffset}}"-->
+      <!--data-y="{{layer.dataY}}"-->
+      <!--data-voffset="{{layer.dataVoffset}}"-->
+      <!--data-width="{{layer.dataWidth}}"-->
+      <!--data-height="{{layer.dataHeight}}"-->
+      <!--data-whitespace="{{layer.dataWhitespace}}"-->
+      <!--data-style_hover="{{layer.dataStyle_hover}}"-->
+      <!--data-transform_idle="{{layer.dataTransform_idle}}"-->
+      <!--data-transform_in="{{layer.dataTransform_in}}"-->
+      <!--data-transform_out="{{layer.dataTransform_out}}"-->
+      <!--data-mask_in="{{layer.dataMask_in}}"-->
+      <!--data-mask_out="{{layer.dataMask_out}}"-->
+      <!--data-start="{{layer.dataStart}}"-->
+      <!--data-splitin="{{layer.dataSplitin}}"-->
+      <!--data-splitout="{{layer.dataSplitout}}"-->
+      <!--data-responsive_offset="{{layer.dataResponsive_offset}}"-->
+      <!--style="{{layer.dataNgStyle}}">-->
+      <!--{{layer.layerText.text}}-->
+      <!--<img-->
+        <!--data-ng-if="layer.img.dataNoRetina"-->
+        <!--src="{{layer.img.src}}"-->
+        <!--alt="{{layer.img.alt}}"-->
+        <!--width="{{layer.img.width}}"-->
+        <!--height="{{layer.img.height}}"-->
+        <!--data-ww="{{layer.img.dataWw}}"-->
+        <!--data-hh="{{layer.img.dataHh}}"-->
+        <!--data-no-retina>-->
+      <!--<i data-ng-if="layer.icon" class="{{layer.icon.class}}"></i>-->
+    <!--</div>-->
+  <!--</li>-->
+<!--</ul>-->
+<div class="tp-bannertimer tp-bottom" style="visibility: hidden !important;"></div>
 ```
 
 ## Attributes
