@@ -2,7 +2,7 @@
   "name": "angular-revolution",
   "version": "1.0.0",
   "description": "Directive for Slider Revolution plugin from ThemePunch",
-  "main": "dist/angular-revolution.js",
+  "main": "release/angular-revolution.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -21,5 +21,17 @@
   "bugs": {
     "url": "https://github.com/Karnith/angular-revolution/issues"
   },
-  "homepage": "https://github.com/Karnith/angular-revolution"
+  "homepage": "https://github.com/Karnith/angular-revolution",
+  "devDependencies": {
+    "del": "^2.2.0",
+    "faithful-exec": "^0.1.0",
+    "gulp": "^3.9.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-jshint": "^2.0.0",
+    "gulp-uglify": "^1.5.1",
+    "jshint": "^2.9.1-rc1",
+    "load-gulp-tasks": "^0.1.0",
+    "shelljs": "^0.5.3",
+    "vinyl-paths": "^2.1.0"
+  }
 }
