@@ -1,6 +1,6 @@
 {
   "name": "angular-revolution",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Directive for Slider Revolution plugin from ThemePunch",
   "main": "release/angular-revolution.js",
   "scripts": {
